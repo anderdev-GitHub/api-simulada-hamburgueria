@@ -1,8 +1,8 @@
-# API de Pedidos
+# API de Pedidos - Hamburgueria 🍔
 
 Esta é minha primeira API desenvolvida simulando gerenciamento de pedidos. Ela permite criar, atualizar, obter e excluir pedidos, bem como atualizar o status de um pedido.
 
-## Instalação
+## Instalação 📦🍔
 
 Certifique-se de ter o Node.js instalado em sua máquina.
 
@@ -14,7 +14,7 @@ Certifique-se de ter o Node.js instalado em sua máquina.
 npm install
 ```
 
-## Uso
+## Uso 🚀
 
 1. Inicie o servidor executando o seguinte comando:
 
@@ -26,9 +26,9 @@ O servidor será iniciado na porta 3000 e você verá a mensagem "🌎 Server st
 
 2. Use um cliente HTTP, como cURL ou Postman, para interagir com a API.
 
-## Endpoints
+## Endpoints 🛠️
 
-### Listar todos os pedidos
+### Listar todos os pedidos 📋
 
 ```
 GET /order
@@ -36,7 +36,7 @@ GET /order
 
 Este endpoint retorna uma lista de todos os pedidos.
 
-### Cadastrar um novo pedido
+### Cadastrar um novo pedido 📝
 
 ```
 POST /order
@@ -52,7 +52,7 @@ Este endpoint permite cadastrar um novo pedido. Envie os seguintes dados no corp
 }
 ```
 
-### Atualizar um pedido
+### Atualizar um pedido ✏️
 
 ```
 PUT /order/:id
@@ -68,7 +68,7 @@ Este endpoint permite atualizar um pedido existente. Substitua `:id` pelo ID do 
 }
 ```
 
-### Excluir um pedido
+### Excluir um pedido 🗑️
 
 ```
 DELETE /order/:id
@@ -76,7 +76,7 @@ DELETE /order/:id
 
 Este endpoint exclui um pedido existente. Substitua `:id` pelo ID do pedido que você deseja excluir.
 
-### Obter um pedido específico
+### Obter um pedido específico  🔍
 
 ```
 GET /order/:id
@@ -84,7 +84,7 @@ GET /order/:id
 
 Este endpoint retorna um pedido específico. Substitua `:id` pelo ID do pedido que você deseja obter.
 
-### Atualizar o status de um pedido
+### Atualizar o status de um pedido ⚙️🔄
 
 ```
 PATCH /order/:id
@@ -92,17 +92,23 @@ PATCH /order/:id
 
 Este endpoint permite atualizar o status de um pedido existente para "Pronto". Substitua `:id` pelo ID do pedido que você deseja atualizar.
 
-## Middleware
+## Middleware ⚙️
 
-A API também possui um middleware para fazer o log do método e URL de cada requisição. Ele é executado antes de cada rota e exibe no console uma mensagem com o método da requisição e a URL solicitada.
+A API possui dois middlewares:
 
-## Notas
+Middleware de log
+Este middleware faz o log do método e URL da requisição antes de cada rota ser executada. Ele exibe no console uma mensagem com o método da requisição e a URL solicitada.
+
+Middleware de verificação do ID
+Este middleware é usado para verificar se o ID do pedido existe. Ele é executado antes das rotas /order/:id, /order/:id, e /order/:id e verifica se o pedido com o ID fornecido existe na lista de pedidos. Se o pedido não for encontrado, retorna uma resposta com status 404 e uma mensagem de erro.
+
+## Notas 📝
 
 - Todos os pedidos são armazenados em memória durante a execução da API. Quando o servidor é reiniciado, os pedidos são redefinidos.
 - O ID de cada pedido é gerado automaticamente usando a biblioteca uuid.
 
-## Contribuição
+## Contribuição  🤝
 
-Espero que essa API seja útil para você de alguma forma! 🚀
+Espero que essa API seja útil para você de alguma forma! 🆙
 
 Feito com ♥ por Anderson Leite :wave: [Entre em contato!](https://www.linkedin.com/in/andersondiasleite/)
