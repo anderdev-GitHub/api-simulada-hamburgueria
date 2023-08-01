@@ -49,7 +49,7 @@ app.put('/order/:id', checkOrderId, (request, response) => {
     const index = request.userIndex
     const id = request.userId
 
-    const updateUser = { id, order, clientName, price}
+    const updateUser = { id, order, clientName, price, status: 'Em preparação' }
 
     orders[index] = updateUser
 
