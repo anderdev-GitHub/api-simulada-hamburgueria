@@ -2,10 +2,11 @@ const express = require("express");
 const uuid = require("uuid");
 const cors = require("cors");
 
-const port = 3001;
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+const port = process.env.PORT || 3001;
 
 const orders = [];
 
@@ -30,6 +31,10 @@ const checkOrderId = (request, response, next) => {
 
   next();
 };
+// Rota para confirmar se aplicação subiu corretamente
+app.get("/", (request, response) => {
+  return response.json("Hello World");
+});
 // Rota para listar todos os pedidos
 app.get("/order", (request, response) => {
   return response.json(orders);
